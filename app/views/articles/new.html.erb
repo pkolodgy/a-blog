@@ -1,0 +1,7 @@
+<h2>Write a new post...</h2>
+<%= render partial: 'errors', locals: {object: @article} %>
+<%= form_for :article, url: { action: "create"} do |f| %>
+  <%= f.text_field :title, placeholder: "title" %><br>
+  <%= f.text_area :body, size: "60x12", placeholder: "content" %><br>
+  <%= f.submit %><br>
+<% end %>
