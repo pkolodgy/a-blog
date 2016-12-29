@@ -1,5 +1,10 @@
 <header>
-  <h1>A Big Blog</h1>
+  <h1><%= link_to 'A Big Blog', root_url %></h1>
   <nav>
+    <% if logged_in? %>
+      <%= current_user.username %> | <%= link_to 'logout', logout_path %>
+    <% else %>
+      <%= link_to 'signup', signup_path %> | <%= link_to 'login', login_path %>
+    <% end %>
   </nav>
 </header>
